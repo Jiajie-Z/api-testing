@@ -1,22 +1,9 @@
-import pytest
 import json
-
-from api_client.api_client import APIClient
-from utils.config import BASE_URL, API_KEY
 from utils.response_validator import validate_schema
 from utils.logger import get_logger
 
 
 logger = get_logger(__name__)
-
-
-@pytest.fixture
-def api_client():
-
-    if not API_KEY:
-        pytest.skip("REQRES_API_KEY not set")
-
-    return APIClient(BASE_URL)
 
 
 def load_test_data():
